@@ -1,6 +1,8 @@
 torch
-pytorch-lightning
+lightning
 numpy
 matplotlib
 pandas
 scipy
+torchvision
+nflows
