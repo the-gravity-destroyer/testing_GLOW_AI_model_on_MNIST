@@ -7,8 +7,8 @@ class Training:
     def __init__(self):
         self.weights_already_trained = False
         self.flow = glow_for_MNIST_utility.create_simple_flow()
-        self.flow.to(self.device)
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.flow.to(self.device)
         self.opt = torch.optim.Adam(self.flow.parameters(), lr=1e-3)
 
 
@@ -44,3 +44,6 @@ class Training:
     def get_train_loader(batch_size=256):
         train_dataset = DequantizedMNIST(root="./data", train=True)
         return DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True, num_workers=4)
+    
+    def cpu_available(self):
+        return torch.device("cuda" if torch.cuda.is_available() else "cpu")

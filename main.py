@@ -7,11 +7,12 @@ from torchvision.utils import save_image
 
 def main():
     training = Training()
-    training.train()
+    print(training.cpu_available)
+    #training.train()
     #evaluation = Evaluation()
     #evaluation.evaluate()
 
-
+    '''
     sampler = ImageSampler("checkpoints/flow_mnist.pt")
     imgs1 = sampler.sample(64)
     imgs2 = sampler.sample(32, temperature=0.7)  # Schärfere Bilder
@@ -20,7 +21,7 @@ def main():
     save_image(imgs1, "outputs/samples_default.png", nrow=8)
     save_image(imgs2, "outputs/samples_temp07.png", nrow=8)
     save_image(imgs3, "outputs/samples_temp12.png", nrow=10)
-
+    '''
 
 if __name__ == "__main__":
     main()

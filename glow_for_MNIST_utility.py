@@ -25,7 +25,7 @@ def channel_mask(Channel):
     # (1,C,1,1) 0/1-Maske – alternierende Kanäle
     m = torch.zeros(Channel)
     m[::2] = 1.0
-    return m.view(1, Channel, 1, 1)
+    return m
 
 def glow_block(Channel):
     """Ein Flow-Step nach Glow: ActNorm → 1x1Conv → AffineCoupling"""
