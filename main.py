@@ -8,11 +8,11 @@ from torchvision.utils import save_image
 def main():
     training = Training()
     training.train()
-    evaluation = Evaluation()
-    evaluation.evaluate()
-    sampler = ImageSampler("checkpoints/flow_mnist.pt")
+    #evaluation = Evaluation()
+    #evaluation.evaluate()
 
-    # Beliebig oft aufrufen
+
+    sampler = ImageSampler("checkpoints/flow_mnist.pt")
     imgs1 = sampler.sample(64)
     imgs2 = sampler.sample(32, temperature=0.7)  # Schärfere Bilder
     imgs3 = sampler.sample(100, temperature=1.2)  # Diversere Bilder

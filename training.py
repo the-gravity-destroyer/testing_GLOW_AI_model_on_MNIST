@@ -7,6 +7,7 @@ class Training:
     def __init__(self):
         self.weights_already_trained = False
         self.flow = glow_for_MNIST_utility.create_simple_flow()
+        self.flow.to(self.device)
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.opt = torch.optim.Adam(self.flow.parameters(), lr=1e-3)
 
