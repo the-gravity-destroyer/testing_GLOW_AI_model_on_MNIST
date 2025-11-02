@@ -7,7 +7,7 @@ from torchvision.utils import save_image
 
 def main():
     training = Training()
-    print(training.cpu_available)
+    print(training.cpu_available())
     #training.train()
     #evaluation = Evaluation()
     #evaluation.evaluate()
